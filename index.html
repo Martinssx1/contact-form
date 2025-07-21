@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="popup hidden"><span class="messageicon"><img src="images/icon-success-check.svg" alt="" class="icon">Message Sent!</span>
+  <div class="bottomtext">Thanks for completing the form.we'll be in touch!</div></div>
+  <div class="wrapper">
+   <h1>Contact Us</h1>
+    <div class="firstpart">
+      <span class="fp1">First Name
+      <input type="text" class="input1">
+      <div class="error"></div>
+      </span>
+      <span class="fp2">
+      Last Name
+      <input type="text" class="input1">
+       <div class="error"></div>
+      </span>
+    </div>
+    <div class="secondpart">
+      <span class="fp1">
+        Email Address
+        <input type="text" class="input2">
+         <div class="error1"></div>
+      </span>
+    </div>
+    <div class="thirdpart">
+      <span class="fp1">
+        Query Type
+        <div class="sp1">
+           <div class="insidequery "> <img src="images/icon-success-check.svg" alt="" class="checkbox">
+            <img src="images/icon-radio-selected.svg" alt="" class="radio">General Enquiry</div>
+      </span>
+        <div class ="insidequery2 ">
+          <img src="images/icon-success-check.svg" alt="" class="checkbox1">
+          <img src="images/icon-radio-selected.svg" alt="" class="radio1">Support Request</div>
+        </div>
+        <div class="error2"></div>
+    </div>
+    <div class="fourthpart">
+      <span class="fp1">
+        Message
+        <textarea  class="pp1"></textarea>
+         <div class="error3"></div>
+      </span>
+    </div>
+    <div class="lastpart">
+      <input type="checkbox" class="checkbox2">
+      I consent to being contacted by the team
+           <div class="error5"></div>
+    </div>
+    <div class="submit">Submit</div>
+  </div>
+  <script>
+    const checkbox2 = document.querySelector('.checkbox2')
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const email = document.querySelector('.input2')
+    const message = document.querySelector('.pp1')
+    const error= document.querySelectorAll('.error')
+     const error1= document.querySelector('.error1')
+      const error2 = document.querySelector('.error2')
+      const error3 = document.querySelector('.error3')
+       const error5 = document.querySelector('.error5')
+      const submit = document.querySelector('.submit')
+      const input = document.querySelectorAll('.input1')
+       const radio = document.querySelector('.radio')
+    const radio1 = document.querySelector('.radio1')
+      function required(){
+       submit.addEventListener('click',()=>{
+        const emailValue = email.value.trim()
+        let formisvalid = true
+        if(!checkbox2.checked){
+          error5.textContent = 'To submit this form,please consent to being contacted'
+          error5.style.color = 'red'
+          formisvalid = false;
+        }
+        else{
+          error5.textContent = ''
+        }
+       const radioDisplay = window.getComputedStyle(radio).display;
+       const radio1Display = window.getComputedStyle(radio1).display;
+
+        if (radioDisplay === 'none' && radio1Display === 'none') {
+           error2.textContent = 'Please select a query type';
+          error2.style.color = 'red';
+          formisvalid = false;
+          } else {
+             error2.textContent = '';
+}
+        
+        if(emailValue === ''){
+            email.style.borderColor = 'red'
+            error1.textContent = 'This field is required'
+            error1.style.color = 'red'
+            formisvalid = false;
+            }
+            else if(!emailPattern.test(emailValue)){
+            email.style.borderColor = 'red'
+            error1.textContent = 'Enter a valid email address'
+            error1.style.color = 'red'
+            formisvalid = false;
+            }
+            else{
+              error1.textContent = ''
+               email.style.borderColor = ' rgb(180, 176, 176)'
+            }
+          input.forEach((inpu,i) => {
+            if(inpu.value.trim()=== ''){
+              inpu.style.borderColor = 'red'
+            error[i].textContent = 'This field is required'
+            error[i].style.color = 'red'
+            formisvalid = false;
+            }
+            else{
+              error[i].textContent = ''
+               inpu.style.borderColor = ' rgb(180, 176, 176)'
+            }
+          });
+           if(message.value.trim()=== ''){
+               message.style.borderColor = 'red'
+            error3.textContent = 'This field is required'
+            error3.style.color = 'red'
+            formisvalid = false;
+            }
+            else{
+              error3.textContent = ''
+               message.style.borderColor = ' rgb(180, 176, 176)'
+            }
+            if(formisvalid){
+               document.querySelector('.popup').classList.remove('hidden')
+              setTimeout(()=>{
+               document.querySelector('.popup').classList.add('hidden')
+            },5000)
+            input.forEach((inp)=>{
+              inp.value = '';
+            })
+            email.value = '';
+            message.value = '';
+            checkbox2.checked = false;
+             radio.style.display = 'none';
+  radio1.style.display = 'none';
+  firstcheckbox.style.display = 'flex';
+  secondcheckbox.style.display = 'flex';
+  insidequery.style.backgroundColor = 'transparent';
+  insidequery1.style.backgroundColor = 'transparent';
+  insidequery.style.borderColor = 'rgb(180, 176, 176)';
+  insidequery1.style.borderColor = 'rgb(180, 176, 176)';
+      
+      }
+       })
+       
+    }
+      required();
+    const insidequery = document.querySelector('.insidequery')
+    const insidequery1 = document.querySelector('.insidequery2')
+    const firstcheckbox = document.querySelector('.checkbox')
+    const secondcheckbox = document.querySelector('.checkbox1')
+   
+    function querybox(){
+       insidequery.addEventListener('click',()=>{
+      radio1.style.display = 'none'
+      secondcheckbox.style.display = 'flex'
+       insidequery1.style.backgroundColor = 'transparent'
+      insidequery1.style.borderColor = ' rgb(180, 176, 176)'
+      firstcheckbox.style.display = 'none'
+      radio.style.display = 'flex'
+      insidequery.style.backgroundColor = 'hsl(165, 14%, 89%)'
+      insidequery.style.borderColor = 'hsl(169, 82%, 27%)'
+
+    })
+
+     insidequery1.addEventListener('click',()=>{
+       radio.style.display = 'none'
+      firstcheckbox.style.display = 'flex'
+     insidequery.style.backgroundColor = 'transparent'
+      insidequery.style.borderColor = ' rgb(180, 176, 176)'
+      secondcheckbox.style.display = 'none'
+      radio1.style.display = 'flex'
+      insidequery1.style.backgroundColor = 'hsl(165, 14%, 89%)'
+      insidequery1.style.borderColor = 'hsl(169, 82%, 27%)'
+    })
+    
+    }
+    querybox();
+   
+  </script>
+</body>
+</html>

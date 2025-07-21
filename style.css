@@ -1,0 +1,153 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  background-color: hsl(148, 38%, 91%);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.input1,.input2{
+  padding: 10px;
+  border-radius: 5px;
+  border:1px solid rgb(180, 176, 176);
+}
+input{
+  outline: none;
+}
+input:hover{
+  border-color: hsl(169, 82%, 27%);
+  cursor: pointer;
+}
+h1{
+  margin-bottom: 20px;
+}
+.error,.error1,.error3,.error2,.error5{
+  font-size: 0.7em;
+}
+.wrapper{
+  background-color:white;
+  width: 38em;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 3px;
+  position: relative;
+}
+.secondpart{
+  margin-bottom: 15px;
+}
+.firstpart,.thirdpart{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.fp1,.fp2{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  row-gap: 5px;
+}
+.sp1{
+  display: flex;
+ gap: 10px;
+ align-items: center;
+}
+.insidequery,.insidequery2{
+  padding: 9px;
+  border-radius: 5px;
+  border:1px solid rgb(180, 176, 176);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.checkbox,.checkbox1{
+  border: 1px solid  rgb(180, 176, 176);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+}
+.radio,.radio1{
+  width: 16px;
+  height: 16px;
+  display: none;
+}
+
+.pp1{
+  border:1px solid  rgb(180, 176, 176);
+  border-radius: 5px;
+  outline: none;
+  padding:5px ;
+  height: 5em;
+}
+.popup{
+  background-color:  hsl(187, 24%, 22%);
+  padding: 18px;
+  border-radius: 10px;
+  position: absolute;
+  top: 2%;
+  z-index: 100;
+}
+.hidden{
+  display: none;
+}
+.icon{
+  height: 19px;
+}
+.messageicon{
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  margin-bottom: 3px;
+}
+.messageicon{
+  color: beige;
+}
+.bottomtext{
+  color: whitesmoke;
+  font-size: small;
+}
+.pp1:hover{
+  cursor: pointer;
+  border-color: hsl(169, 82%, 27%) ;
+}
+.lastpart{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.submit{
+  width: 100%;
+  background-color: hsl(169, 82%, 27%);
+  color: whitesmoke;
+  text-align: center;
+  padding: 12px;
+  border-radius: 5px;
+}
+.submit:hover{
+  background-color: hsl(169, 82%, 13%) ;
+  cursor: pointer;
+}
+@media(max-width:700px){
+  .wrapper{
+    width: 95%;
+  }
+  
+}
+@media(max-width:430px){
+  .firstpart{
+    flex-direction: column;
+  }
+   .firstpart{
+    flex-direction: column;
+  }
+   .sp1{
+    flex-direction: column;
+  }
+  .pp1{
+    height: 9em;
+  }
+}
