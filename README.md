@@ -6,7 +6,7 @@ This is a solution to the **[Frontend Mentor](https://www.frontendmentor.io/)** 
 
 ## 🚀 Live Demo
 
-\[Add your live site link here once deployed]
+https://martinssx1.github.io/contact-form/
 
 ---
 
@@ -44,10 +44,6 @@ This is a solution to the **[Frontend Mentor](https://www.frontendmentor.io/)** 
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/yourusername/contact-form-frontend-mentor.git
-   cd contact-form-frontend-mentor
-   ```
 
 2. Open `index.html` in your browser or run it using a live server.
 
@@ -92,7 +88,7 @@ Field                  Rule
 
 ## 👨‍💻 Author
 
-**Your Name** – [@yourhandle](https://github.com/yourhandle)
+Malik martins – (https://github.com/Martinssx1)
 
 ---
 
